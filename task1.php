@@ -94,17 +94,17 @@ function test_input($data) {
 
 <?php
 echo "<h2>Your Input:</h2>";
-echo $name;
+echo 'Name'.$name;
 echo "<br>";
-echo $email;
+echo 'Email'.$email;
 echo "<br>";
-echo $groupno;
+echo 'Group no:'.$groupno;
 echo "<br>";
-echo $comment;
+echo 'Comment:'.$comment;
 echo "<br>";
-echo $gender;
+echo "Gender".$gender;
 echo "<br>";
-echo $courses;
+echo "Courses".$courses;
 ?>
 
 </body>
