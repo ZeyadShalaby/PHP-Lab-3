@@ -12,7 +12,7 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = "";
-$name = $email = $gender = $comment = $groupno = "";
+$name = $email = $gender = $comment = $groupno = $courses ="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($_POST["name"])){
@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          
     }
 
+  $courses = test_input($_POST["courses"]);  
   $groupno = test_input($_POST["groupno"]);
   $comment = test_input($_POST["comment"]);
 
@@ -81,6 +82,13 @@ function test_input($data) {
   <input type="radio" name="gender" value="male" required>Male
   <br><br>
 
+  Select Courses: <select name="courses[]" size="4" multiple tabindex="1">
+  <option value="PHP"> PHP </option>
+  <option value="Javascript"> JAvascript </option>
+  <option value="MySQL"> MySQL </option>
+  <option value="HTML"> HTML </option>
+  <option value="CSS"> CSS </option>
+
   <input type="submit" name="submit" value="Submit">  
 </form>
 
@@ -95,6 +103,8 @@ echo "<br>";
 echo $comment;
 echo "<br>";
 echo $gender;
+echo "<br>";
+echo $courses;
 ?>
 
 </body>
